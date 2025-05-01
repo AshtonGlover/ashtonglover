@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashton Glover</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="logo">
+        <img src="images/logo.png" />
+        <a class="name" href="index.html">Ashton Glover</a>
+      </div>
+
+      <div class="nav-links">
+        <a class="about" href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="resume2024.pdf" target="_blank">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+        <form onsubmit="resetForm(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function resetForm(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var message = document.getElementById("message").value;
+
+        document.querySelector("form").reset();
+
+        sendToSheetDB(name, message);
+      }
+
+      function sendToSheetDB(name, message) {
+        const sheetDbUrl = "https://sheetdb.io/api/v1/rxo4afdmxqkid";
+
+        const data = {
+          name: name,
+          message: message,
+          timestamp: new Date().toISOString(),
+        };
+        fetch(sheetDbUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Data sent successfully:", data);
+          })
+          .catch((error) => {
+            console.error("Error sending data:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
