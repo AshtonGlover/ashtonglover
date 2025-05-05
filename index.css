@@ -248,6 +248,18 @@ a {
   .intro {
     font-size: 50px;
   }
+
+  .nav-bar {
+    font-size: 20px;
+  }
+
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 750px) {
