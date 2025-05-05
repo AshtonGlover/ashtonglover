@@ -71,8 +71,7 @@ h2 {
 }
 
 .center-content {
-  width: 100%;
-  margin-left: 12%;
+  padding-left: 12%;
   margin-bottom: 20vh;
 }
 
@@ -239,4 +238,30 @@ a {
   font-size: 16px;
   color: #555;
   line-height: 1.5;
+}
+
+@media (max-width: 750px) {
+  .nav-links {
+    display: none
+  }
+
+  .intro {
+    font-size: 70px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+
+  .nav-bar {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  
+}
+
+@media (max-width: 1200px) {
+  
 }
