@@ -13,7 +13,9 @@
         <a class="name" href="index.html">Ashton Glover</a>
       </div>
 
-      <div class="nav-links">
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <div class="nav-links" id="nav-links">
         <a class="about" href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="resume2024.pdf" target="_blank">Resume</a>
@@ -22,5 +24,14 @@
     </div>
 
     <p> Hi, my name is Ashton Glover and I am a junior studying computer science at Brown University. </p>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
