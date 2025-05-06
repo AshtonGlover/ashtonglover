@@ -324,6 +324,10 @@ a {
     width: 100%;
     padding-left: 0;
   }
+
+  .about {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -345,4 +349,20 @@ a {
   .name {
     font-size: 20px;
   }
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-text {
+  font-size: 20px;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.about-image {
+  margin-bottom: 10vh;
 }
